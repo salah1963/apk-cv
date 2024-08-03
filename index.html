@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الترحيب | Ayoub Touati</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Root variables for colors and fonts */
+        :root {
+            --primary-color: #00b09b;
+            --secondary-color: #96c93d;
+            --text-color: #333;
+            --background-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background-gradient);
+            font-family: var(--font-family);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxwYXR0ZXJufGVufDB8fHx8MTY4NzY4NTM5Mg&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: all 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: calc(2rem + 2vw);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-content p {
+            font-size: calc(1rem + 0.5vw);
+            font-weight: 500;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            font-size: calc(1rem + 0.3vw);
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-custom:hover {
+            background-color: #029d84;
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Programmer Section Styles */
+        .programmer-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .programmer-section .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .programmer-section img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .programmer-section img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .programmer-section h2 {
+            margin-top: 10px;
+            font-size: calc(1.8rem + 0.5vw);
+            color: var(--text-color);
+        }
+
+        .programmer-section p {
+            font-size: calc(1rem + 0.3vw);
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: calc(1.5rem + 0.3vw);
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #029d84;
+            transform: scale(1.2);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--text-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: calc(0.8rem + 0.2vw);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 10px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn-custom {
+                font-size: 1.1rem;
+                padding: 10px 25px;
+            }
+
+            .programmer-section img {
+                width: 160px;
+                height: 160px;
+            }
+
+            .programmer-section h2 {
+                font-size: 2rem;
+            }
+
+            .programmer-section p {
+                font-size: 1rem;
+            }
+
+            .social-icons a {
+                font-size: 1.3rem;
+            }
+
+            .footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn-custom {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+
+            .programmer-section img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .programmer-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .programmer-section p {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+
+            .social-icons a {
+                font-size: 1.2rem;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>مرحبًا بك في منشئ السيرة الذاتية</h1>
+            <p>ابدأ في إنشاء سيرتك الذاتية الاحترافية الآن بكل سهولة واحترافية</p>
+            <a href="signin/login.html" class="btn btn-custom">ابدأ الآن</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Programmer Section -->
+        <section class="programmer-section">
+            <div class="container">
+                <img src="https://media.licdn.com/dms/image/D4D03AQFooarLGisJUA/profile-displayphoto-shrink_200_200/0/1667096847210?e=2147483647&v=beta&t=Eut5vx3gRDPp9iex8Fdc4rMTo_WIRQhQ9fPPWeU7l14"
+                    alt="Ayoub Touati">
+                <h2>من هو المبرمج</h2>
+                <h2>Ayoub Touati</h2>
+                <p>ايوب التواتي هو مبرمج متميز في تطوير تطبيقات الويب والبرمجيات، يتمتع بخبرة عميقة في بناء حلول
+                    تقنية مبتكرة وفعّالة.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/touati.ayoub02" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/twinty.9ine" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 جميع الحقوق محفوظة - <a href="https://instagram.com/twinty.9ine">Ayoub Touati</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
