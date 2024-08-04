@@ -104,7 +104,7 @@ signIn.addEventListener('click', (event) => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      showMessage('Login is successful. Redirecting...', 'signInMessage');
+      showMessage('مرحبا بك فالتطبيق. Redirecting...', 'signInMessage');
       const user = userCredential.user;
       localStorage.setItem('loggedInUserId', user.uid);
 
