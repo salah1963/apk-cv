@@ -74,7 +74,7 @@ signUp.addEventListener('click', (event) => {
         })
         .catch((error) => {
           console.error("Error writing document", error);
-          showMessage("Error writing document", 'signUpMessage');
+          showMessage("مشكل فالسيرفر عاود برك", 'signUpMessage');
         });
     })
     .catch((error) => {
